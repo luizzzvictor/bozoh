@@ -3,13 +3,12 @@ const dado2 = document.querySelector("#gire2");
 const dado3 = document.querySelectorAll("#gire3");
 
 tentativas = 5;
-rodadaCounter = 0
+rodadaCounter = 0;
 
 counter1 = 0;
 counter2 = 0;
 counter3 = 0;
 counter31 = 0;
-
 
 function iniciarContagem1() {
   counter1 = Math.floor(Math.random() * 5);
@@ -34,27 +33,27 @@ function iniciarContagem31() {
 
 //essa função precisa checar individualmente os counters...
 function checarDados() {
-  if (counter1 === counter2) {
-    console.log("Match! 1-2");
-  }
-  if (counter1 === counter3) {
-    console.log("Match! 1-3");
-  }
-  if (counter1 === counter31) {
-    console.log("Match! 1-4");
-  }
+  //   if (counter1 === counter2) {
+  //     console.log("Match! 1-2");
+  //   }
+  //   if (counter1 === counter3) {
+  //     console.log("Match! 1-3");
+  //   }
+  //   if (counter1 === counter31) {
+  //     console.log("Match! 1-4");
+  //   }
   if (rodadaCounter === 3) {
-    console.log(`Sua pontuação equivale a ${counter1*10}`)
+    console.log(`Sua pontuação equivale a ${counter1 * 10}`);
   }
-  if (tentativas = 0) {
-    console.log("Você perdeu ;(")
+  if (tentativas === 0) {
+    console.log("Você perdeu ;(");
   }
 }
 
 function checagemDerrota() {
-    if (tentativas = 0) {
-        console.log('Você perdeu.')
-    }
+  if ((tentativas = 0)) {
+    console.log("Você perdeu.");
+  }
 }
 
 let repeat1 = setInterval(iniciarContagem1, 500);
@@ -70,38 +69,48 @@ dado1.addEventListener("click", () => {
 
   dado2.addEventListener("click", () => {
     clearInterval(repeat2);
-    // rodadaCounter++;
+    rodadaCounter++; //preciso isolar esse seletor com um if, igualando os counters, 
+    //para evitar que na última rodada o resultado da pontuação venha antes
     // checarDados();  essa chamada de função está desregulando a diminuição das tentativas, pq?
     if (counter1 !== counter2) {
       setInterval(iniciarContagem2, 1000);
-    //   rodadaCounter--;
+      rodadaCounter--;
       tentativas--;
       alert("Errou.");
-      console.log(tentativas);
+      console.log(
+        `Você tem ${tentativas} tentativas, e você deu match em ${rodadaCounter} dado.`
+      );
+      checarDados();
     }
+    // checarDados()
   });
   dado3[0].addEventListener("click", () => {
     clearInterval(repeat3);
-    // rodadaCounter++
-    // checarDados();
+    rodadaCounter++;
     if (counter1 !== counter3) {
       setInterval(iniciarContagem3, 1000);
-    //   rodadaCounter--;
+      rodadaCounter--;
       tentativas--;
       alert("Errou.");
-      console.log(tentativas);
+      console.log(
+        `Você tem ${tentativas} tentativas, e você deu match em ${rodadaCounter} dado.`
+      );
+      checarDados();
     }
   });
   dado3[1].addEventListener("click", () => {
     clearInterval(repeat31);
-    // rodadaCounter++;
+    rodadaCounter++;
     checarDados();
     if (counter1 !== counter31) {
       setInterval(iniciarContagem31, 1000);
-    //   rodadaCounter--;
+      rodadaCounter--;
       tentativas--;
       alert("Errou.");
-      console.log(tentativas);
+      console.log(
+        `Você tem ${tentativas} tentativas, e você deu match em ${rodadaCounter} dado.`
+      );
+      checarDados();
     }
   });
 });
