@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+
+* {
+    margin: 0; /* distancia entre elementos */
+    padding: 0; /* distancia conteudo e borda */
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    flex-direction: row; /* or column*/
+    justify-content: center; /* eixo X */
+    align-items: center; /* eixo Y */
+    height: 100vh;
+    background-color: azure;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column; /* or column*/
+    justify-content: center; /* eixo X */
+    align-items: center; /* eixo Y */
+    height: 100vh;
+    background-color: azure;
+  }
+  
+  section {
+    display: flex;
+    flex-direction: row; /* or column*/
+    justify-content: center; /* eixo X */
+    align-items: center; /* eixo Y */
+    /* height: 100vh; */
+    background-color: azure;
+    padding: 1px 1px
+  }
+
+  div {
+    padding-left: 2em;
+  }
+
+
+  p {
+    
+    font-size: 4em;
+    font-family: 'Nabla';
+    /* color: aqua; */
+  }
+
+  p:hover {
+    cursor: pointer;
+
+  }
+
+  #gire1 {
+    text-shadow: -5px 5px 0px #00e6e6, -10px 10px 0px #f0ce11,
+    -15px 15px 0px #00bdbd;
+  }
