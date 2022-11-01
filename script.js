@@ -1,6 +1,7 @@
 const dado1 = document.querySelector("#gire1");
 const dado2 = document.querySelector("#gire2");
 const dado3 = document.querySelectorAll("#gire3");
+let invocada = false;
 
 tentativas = 5;
 rodadaCounter = 0;
@@ -11,106 +12,124 @@ counter3 = 0;
 counter31 = 0;
 
 function iniciarContagem1() {
-  counter1 = Math.floor(Math.random() * 5);
+  counter1 = Math.floor(Math.random() * 7);
   dado1.innerHTML = counter1;
 }
 
 function iniciarContagem2() {
-  counter2 = Math.floor(Math.random() * 5);
+  counter2 = Math.floor(Math.random() * 7);
   dado2.innerHTML = counter2;
 }
 
 function iniciarContagem3() {
-  counter3 = Math.floor(Math.random() * 5);
+  counter3 = Math.floor(Math.random() * 7);
   dado3[0].innerHTML = counter3;
-  // dado3[1].innerHTML = Math.floor(Math.random() * 5)
 }
 
 function iniciarContagem31() {
-  counter31 = Math.floor(Math.random() * 5);
+  counter31 = Math.floor(Math.random() * 7);
   dado3[1].innerHTML = counter31;
 }
 
 //essa função precisa checar individualmente os counters...
 function checarDados() {
-  //   if (counter1 === counter2) {
-  //     console.log("Match! 1-2");
-  //   }
-  //   if (counter1 === counter3) {
-  //     console.log("Match! 1-3");
-  //   }
-  //   if (counter1 === counter31) {
-  //     console.log("Match! 1-4");
-  //   }
   if (rodadaCounter === 3) {
-    console.log(`Sua pontuação equivale a ${counter1 * 10}`);
+    console.log(`Você ganhou.Sua pontuação equivale a ${counter1 * 10}`);
   }
   if (tentativas === 0) {
     console.log("Você perdeu ;(");
   }
 }
 
-function checagemDerrota() {
-  if ((tentativas = 0)) {
-    console.log("Você perdeu.");
-  }
-}
-
 let repeat1 = setInterval(iniciarContagem1, 500);
-// let repeat2 = setInterval(iniciarContagem2,600)
-// let repeat3 = setInterval(iniciarContagem3,700)
-// let repeat31 = setInterval(iniciarContagem31,700)
+let repeat2 = setInterval(iniciarContagem2, 1000);
+let repeat3 = setInterval(iniciarContagem3, 1000);
+let repeat31 = setInterval(iniciarContagem31, 1000);
 
 dado1.addEventListener("click", () => {
+  invocada = true;
   clearInterval(repeat1);
-  let repeat2 = setInterval(iniciarContagem2, 1000);
-  let repeat3 = setInterval(iniciarContagem3, 1000);
-  let repeat31 = setInterval(iniciarContagem31, 1000);
 
   dado2.addEventListener("click", () => {
-    clearInterval(repeat2);
-    rodadaCounter++; //preciso isolar esse seletor com um if, igualando os counters, 
-    //para evitar que na última rodada o resultado da pontuação venha antes
-    // checarDados();  essa chamada de função está desregulando a diminuição das tentativas, pq?
-    if (counter1 !== counter2) {
-      setInterval(iniciarContagem2, 1000);
-      rodadaCounter--;
+    if (counter1 === counter2) {
+      clearInterval(repeat2);
+      rodadaCounter++;
+      console.log(
+        `Você tem ${tentativas} tentativas, e você deu match em ${rodadaCounter} dado.`
+      );
+    } else {
       tentativas--;
       alert("Errou.");
       console.log(
         `Você tem ${tentativas} tentativas, e você deu match em ${rodadaCounter} dado.`
       );
-      checarDados();
     }
-    // checarDados()
+    checarDados();
   });
   dado3[0].addEventListener("click", () => {
-    clearInterval(repeat3);
-    rodadaCounter++;
-    if (counter1 !== counter3) {
-      setInterval(iniciarContagem3, 1000);
-      rodadaCounter--;
+    if (counter1 === counter3) {
+      clearInterval(repeat3);
+      rodadaCounter++;
+      console.log(
+        `Você tem ${tentativas} tentativas, e você deu match em ${rodadaCounter} dado.`
+      );
+    } else {
       tentativas--;
       alert("Errou.");
       console.log(
         `Você tem ${tentativas} tentativas, e você deu match em ${rodadaCounter} dado.`
       );
-      checarDados();
     }
+    checarDados();
   });
   dado3[1].addEventListener("click", () => {
-    clearInterval(repeat31);
-    rodadaCounter++;
-    checarDados();
-    if (counter1 !== counter31) {
-      setInterval(iniciarContagem31, 1000);
-      rodadaCounter--;
+    if (counter1 === counter31) {
+      clearInterval(repeat31);
+      rodadaCounter++;
+      console.log(
+        `Você tem ${tentativas} tentativas, e você deu match em ${rodadaCounter} dado.`
+      );
+    } else {
       tentativas--;
       alert("Errou.");
       console.log(
         `Você tem ${tentativas} tentativas, e você deu match em ${rodadaCounter} dado.`
       );
-      checarDados();
     }
+    checarDados();
   });
 });
+
+
+dado2.addEventListener("click", () => {
+  if (!invocada) {
+    console.log(`O trunfo precisa ser escolhido.`);
+  }
+});
+dado3[0].addEventListener("click", () => {
+  if (!invocada) {
+    console.log(`O trunfo precisa ser escolhido.`);
+  }
+});
+dado3[1].addEventListener("click", () => {
+  if (!invocada) {
+    console.log(`O trunfo precisa ser escolhido.`);
+  }
+});
+
+const dadoInicial = new Dado()
+
+const gerarFase2 = new Fase('fácil')
+const gerarFase3 = new Fase('média')
+const gerarFase4 = new Fase('difícil')
+const gerarFase5 = new Fase('hardcore')
+
+gerarFase2.gerarFase()
+gerarFase3.gerarFase()
+gerarFase4.gerarFase()
+gerarFase5.gerarFase()
+
+
+
+// dadoInicial.gerarDado()
+// dadoInicial.rolarDado()

@@ -35,7 +35,8 @@
   }
 
   div {
-    padding-left: 2em;
+    padding-left: 3em;
+    padding-right: 3em;
   }
 
 
@@ -51,7 +52,8 @@
 
   }
 
-  #gire1 {
+  #gire1,
+  .trunfo {
     text-shadow: -5px 5px 0px #00e6e6, -10px 10px 0px #f0ce11,
     -15px 15px 0px #00bdbd;
   }
