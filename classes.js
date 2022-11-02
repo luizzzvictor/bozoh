@@ -23,16 +23,28 @@ class Fase {
     this.nível = nível;
     this.tentativas = 5;
     this.rodadaCounter = 0;
+    this.conclusao = false     
   }
+// this.conclusao = false
 
   gerarFase() {
+    
+    //Monitores
+    let monitor = document.getElementById('monitor')
+    let pontuação = document.getElementById('pontos')
+    let tries = document.getElementById('tries')
+    // let conclusao = false;
+
+
+    //Monitor
+    
     const dadoTrunfo = new Dado();
     const dadoSombra1 = new Dado();
     const dadoSombra2 = new Dado();
     const dadoSombra3 = new Dado();
 
-    let tentativasF = 5;
-    let rodadaCounterF = 0;
+    let tentativasF = 5; 
+    let rodadaCounterF = 0;    
     let invocadaF = false;
 
     function checarDadosF() {
@@ -40,6 +52,13 @@ class Fase {
         console.log(
           `Você ganhou. Sua pontuação equivale a ${dadoTrunfo.counter * 10}.`
         );
+        
+        if(pontuação.innerText=== '-') {
+            pontuação.innerText = Number(dadoTrunfo.counter*10)
+        } else {
+            pontuação.innerText = Number(pontuação.innerText) + Number(dadoTrunfo.counter*10)
+        }       
+        
       }
       if (tentativasF === 0) {
         console.log("Você perdeu ;(");
@@ -80,35 +99,76 @@ class Fase {
     telaDeJogo.appendChild(dadoHtmlSection);
     //posso tranformar isso aqui /\ em uma function da Class Dado
 
-    //Rolando Dados \/ tbm possível transformar em function de Dado
+    //Rolando Dados conforme Nível \/ tbm possível transformar em function de Dado
     function iniciarContagemTrunfo() {
       dadoTrunfo.counter = Math.floor(Math.random() * 7);
       dadoHtmlPTrunfo.innerText = dadoTrunfo.counter;
     }
-    let repeatTrunfo = setInterval(iniciarContagemTrunfo, 500);
+    let repeatTrunfo = setInterval(iniciarContagemTrunfo, 300);
 
     function iniciarContagemSombra1() {
       dadoSombra1.counter = Math.floor(Math.random() * 7);
       dadoHtmlPSombra1.innerText = dadoSombra1.counter;
     }
-    let repeatSombra1 = setInterval(iniciarContagemSombra1, 1000);
-
+    
+    let repeatSombra1 = ''
+    
+    if (this.nível === 'easy') {
+        monitor.innerText = 'Set Trunfo'
+        repeatSombra1 = setInterval(iniciarContagemSombra1, 1000);
+    }
+    if (this.nível === 'medium') {
+        repeatSombra1 = setInterval(iniciarContagemSombra1, 850);
+    }
+    if (this.nível === 'hard') {
+        repeatSombra1 = setInterval(iniciarContagemSombra1, 500);
+    }
+    if (this.nível === 'hardcore') {
+        repeatSombra1 = setInterval(iniciarContagemSombra1, 300);
+    }
+    
     function iniciarContagemSombra2() {
-      dadoSombra2.counter = Math.floor(Math.random() * 7);
-      dadoHtmlPSombra2.innerText = dadoSombra2.counter;
+        dadoSombra2.counter = Math.floor(Math.random() * 7);
+        dadoHtmlPSombra2.innerText = dadoSombra2.counter;
     }
-    let repeatSombra2 = setInterval(iniciarContagemSombra2, 1000);
-
+    let repeatSombra2 = ''
+    if (this.nível === 'easy') {
+        repeatSombra2 = setInterval(iniciarContagemSombra2, 1000);
+    }
+    if (this.nível === 'medium') {
+        repeatSombra2 = setInterval(iniciarContagemSombra2, 850);
+    }
+    if (this.nível === 'hard') {
+        repeatSombra2 = setInterval(iniciarContagemSombra2, 500);
+    }
+    if (this.nível === 'hardcore') {
+        repeatSombra2 = setInterval(iniciarContagemSombra2, 300);
+    }
+    
+    
     function iniciarContagemSombra3() {
-      dadoSombra3.counter = Math.floor(Math.random() * 7);
-      dadoHtmlPSombra3.innerText = dadoSombra3.counter;
+        dadoSombra3.counter = Math.floor(Math.random() * 7);
+        dadoHtmlPSombra3.innerText = dadoSombra3.counter;
     }
-    let repeatSombra3 = setInterval(iniciarContagemSombra3, 1000);
+    let repeatSombra3 = ''
+    if (this.nível === 'easy') {
+        repeatSombra3 = setInterval(iniciarContagemSombra3, 1000);
+    }
+    if (this.nível === 'medium') {
+        repeatSombra3 = setInterval(iniciarContagemSombra3, 850);
+    }
+    if (this.nível === 'hard') {
+        repeatSombra3 = setInterval(iniciarContagemSombra3, 500);
+    }
+    if (this.nível === 'hardcore') {
+        repeatSombra3 = setInterval(iniciarContagemSombra3, 300);
+    }
     //Rolando Dados /\ tbm possível transformar em function de Dado
 
     //Parando Dados \/
     dadoHtmlPTrunfo.addEventListener("click", () => {
       invocadaF = true;
+      monitor.innerText = 'Match Sombras'
       clearInterval(repeatTrunfo);
 
       dadoHtmlPSombra1.addEventListener("click", () => {
@@ -120,12 +180,17 @@ class Fase {
           );
         } else {
           tentativasF--;
+          tries.innerText = tentativasF
           alert("Errou");
           console.log(
             `Você tem ${tentativasF} tentativas, e você deu match em ${rodadaCounterF} dado(s)`
           );
         }
         checarDadosF()
+        if (rodadaCounterF === 3) {
+            this.conclusao = true
+        }
+
       });
       
       dadoHtmlPSombra2.addEventListener("click", () => {
@@ -137,12 +202,16 @@ class Fase {
           );
         } else {
           tentativasF--;
+          tries.innerText = tentativasF;
           alert("Errou");
           console.log(
             `Você tem ${tentativasF} tentativas, e você deu match em ${rodadaCounterF} dado(s)`
           );
         }
         checarDadosF()
+        if (rodadaCounterF === 3) {
+            this.conclusao = true
+        }
       });
       
       dadoHtmlPSombra3.addEventListener("click", () => {
@@ -154,12 +223,16 @@ class Fase {
           );
         } else {
           tentativasF--;
+          tries.innerText = tentativasF;
           alert("Errou");
           console.log(
             `Você tem ${tentativasF} tentativas, e você deu match em ${rodadaCounterF} dado(s)`
           );
         }
         checarDadosF()
+        if (rodadaCounterF === 3) {
+            this.conclusao = true
+        }
       });
 
 
@@ -171,6 +244,7 @@ class Fase {
     dadoHtmlPSombra1.addEventListener("click", () => {
         if (!invocadaF) {
             console.log(`O trunfo precisa ser escolhido.`);
+            monitor.innerText = 'You must set Trunfo'
           }
     })
     dadoHtmlPSombra2.addEventListener("click", () => {
@@ -184,8 +258,5 @@ class Fase {
           }
     })
     //Checando se Trunfo foi setado /\
-
-
-
   }
 }

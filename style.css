@@ -8,11 +8,24 @@
 
   body {
     display: flex;
-    flex-direction: row; /* or column*/
+    flex-direction: column; /* or column*/
     justify-content: center; /* eixo X */
     align-items: center; /* eixo Y */
     height: 100vh;
     background-color: azure;
+  }
+
+  body>span {
+    padding-top: 7%;
+    font-family: 'Share Tech Mono';
+    color: darkgray;
+    font-size: 20px;    
+  }
+  h6 {
+    padding-top: 1%;
+    font-family: 'Share Tech Mono';
+    color: darkgray;
+    font-size: 15px;      
   }
 
   article {
@@ -22,6 +35,7 @@
     align-items: center; /* eixo Y */
     height: 100vh;
     background-color: azure;
+    padding-bottom: 120px;
   }
   
   section {
@@ -33,6 +47,15 @@
     background-color: azure;
     padding: 1px 1px
   }
+  
+  footer {
+    font-family: 'Share Tech Mono';
+    color: darkgray;
+    background-color: azure;
+    padding: 5px 5px
+  }
+
+
 
   div {
     padding-left: 3em;
@@ -43,7 +66,7 @@
   p {
     
     font-size: 4em;
-    font-family: 'Nabla';
+    /* font-family: 'Nabla'; */
     /* color: aqua; */
   }
 
