@@ -100,7 +100,6 @@
 //   });
 // });
 
-
 // dado2.addEventListener("click", () => {
 //   if (!invocada) {
 //     console.log(`O trunfo precisa ser escolhido.`);
@@ -117,21 +116,64 @@
 //   }
 // });
 
+const passarDeFase = document.getElementById("monitor");
 
-const gerarFase1 = new Fase ('easy')
-const gerarFase2 = new Fase('easy')
-const gerarFase3 = new Fase('medium')
-const gerarFase4 = new Fase('hard')
-const gerarFase5 = new Fase('hardcore')
+const gerarFase1 = new Fase("easy");
+const gerarFase2 = new Fase("easy");
+const gerarFase3 = new Fase("medium");
+const gerarFase4 = new Fase("hard");
+const gerarFase5 = new Fase("hardcore");
 
-gerarFase1.gerarFase()
-gerarFase2.gerarFase()
+gerarFase1.gerarFase();
+
+passarDeFase.addEventListener(
+  "click",
+  function fase2() {
+    if (gerarFase1.conclusao) {
+      gerarFase1.conclusao = false
+      gerarFase2.gerarFase();
+    }
+
+    if (gerarFase2.conclusao) {
+      gerarFase2.conclusao = false
+      gerarFase3.gerarFase();
+    }
+
+    if (gerarFase3.conclusao) {
+      gerarFase3.conclusao = false
+      gerarFase4.gerarFase();
+    }
+
+    if (gerarFase4.conclusao) {
+      gerarFase4.conclusao = false
+      gerarFase5.gerarFase();
+    }
+    
+  });
 
 
-
-// gerarFase3.gerarFase()
-// gerarFase4.gerarFase()
-// gerarFase5.gerarFase()
-
-
-
+// passarDeFase.addEventListener(
+//   "click",
+//   () => {
+    
+//   },
+//   { once: true }
+// );
+// passarDeFase.addEventListener(
+//   "click",
+//   () => {
+//     if (gerarFase3.conclusao) {
+//       gerarFase4.gerarFase();
+//     }
+//   },
+//   { once: true }
+// );
+// passarDeFase.addEventListener(
+//   "click",
+//   () => {
+//     if (gerarFase4.conclusao) {
+//       gerarFase5.gerarFase();
+//     }
+//   },
+//   { once: true }
+// );
