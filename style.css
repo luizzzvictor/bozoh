@@ -39,6 +39,26 @@ body > span {
   user-select: none; /* Standard syntax */
 }
 
+h5 {
+  /* margin: 20px 0; */
+  font-size: 4rem;
+  font-family: "Nabla";
+  /* text-shadow: -5px 5px 0px #00e6e6, -10px 10px 0px #f0ce11,
+    -15px 15px 0px #00bdbd; */
+  color: #ffffff;
+  margin: 0;
+  width: fit-content;
+  word-spacing: 50px;
+  font-style: italic;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+h5:hover {  
+  cursor: pointer;
+}
+
 h1 {
   margin: 20px 0;
   font-size: 12rem;
@@ -149,6 +169,25 @@ p:hover {
   background-size: 22px 22px;
 }
 
+#rules {
+  width: 100%;
+  justify-content: flex-end;  
+  position: sticky;
+}
+
+.hideRules {
+  display: none;
+}
+
+img {
+  height: 100vh;
+  /* background-color: azure; */
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-top: 30px;
+}
+
+
 @media (width < 768px) {
   p {
     font-size: 4em;
@@ -168,6 +207,10 @@ p:hover {
 
   article {
     padding-bottom: 20px;
+  }
+
+  #rules {
+    display: none;
   }
 
   section {

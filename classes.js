@@ -1,8 +1,7 @@
 class Dado {
   constructor() {
-    this.counter = 0;    
+    this.counter = 0;
   }
-
 }
 
 class Fase {
@@ -18,12 +17,12 @@ class Fase {
   gerarFase() {
     //Monitores
     let monitor = document.getElementById("monitor");
-    monitor.className = 'dontClick'
+    monitor.className = "dontClick";
     let pontuação = document.getElementById("pontos");
     // let tries = document.getElementById("tries");
-    let nivelDaFase = this.nível
+    let nivelDaFase = this.nível;
     // tries.innerText = 5;
-    const dadinhos = document.getElementById('divDosDadinhos')
+    const dadinhos = document.getElementById("divDosDadinhos");
 
     //Monitor
 
@@ -39,7 +38,9 @@ class Fase {
     function checarDadosF() {
       if (rodadaCounterF === 3) {
         console.log(
-          `Você passou de fase! Pontuação desta fase equivale a ${dadoTrunfo.counter * 10}.`
+          `Você passou de fase! Pontuação desta fase equivale a ${
+            dadoTrunfo.counter * 10
+          }.`
         );
 
         if (pontuação.innerText === "-") {
@@ -49,29 +50,30 @@ class Fase {
             pontuação.innerText = Number(dadoTrunfo.counter * 10);
           }
         } else {
-            if (dadoTrunfo.counter === 0) {
-                pontuação.innerText =
-                Number(pontuação.innerText) + Number(100);
-
-            } else {                
-                pontuação.innerText =
-                Number(pontuação.innerText) + Number(dadoTrunfo.counter * 10);
-            }
+          if (dadoTrunfo.counter === 0) {
+            pontuação.innerText = Number(pontuação.innerText) + Number(100);
+          } else {
+            pontuação.innerText =
+              Number(pontuação.innerText) + Number(dadoTrunfo.counter * 10);
+          }
         }
 
-        if (nivelDaFase === 'hardcore') {
-            monitor.innerText = "YOU WIN";
-            alert(`Bozó! Congrats! Sua pontuação equivale a ${pontuação.innerText} pontos!`);
-            window.location.reload()
+        if (nivelDaFase === "hardcore") {
+          monitor.innerText = "YOU WIN";
+          alert(
+            `Bozó! Congrats! Sua pontuação equivale a ${pontuação.innerText} pontos!`
+          );
+          window.location.reload();
         } else {
-            monitor.className = 'clickMe'
-            monitor.innerText = "Next Phase";
+          monitor.className = "clickMe";
+          monitor.innerText = "Next Phase";
         }
-
       }
       if (tentativasF === 0) {
-        alert(`Game over! Sua pontuação equivale a ${pontuação.innerText} pontos!`);
-        window.location.reload()
+        alert(
+          `Game over! Sua pontuação equivale a ${pontuação.innerText} pontos!`
+        );
+        window.location.reload();
       }
     }
 
@@ -189,9 +191,9 @@ class Fase {
           );
         } else {
           tentativasF--;
-        //   tries.innerText = tentativasF;
+          //   tries.innerText = tentativasF;
           alert("Errou");
-          dadinhos.removeChild(dadinhos.firstElementChild)
+          dadinhos.removeChild(dadinhos.firstElementChild);
           console.log(
             `Você tem ${tentativasF} tentativas, e você deu match em ${rodadaCounterF} dado(s)`
           );
@@ -211,9 +213,9 @@ class Fase {
           );
         } else {
           tentativasF--;
-        //   tries.innerText = tentativasF;
+          //   tries.innerText = tentativasF;
           alert("Errou");
-          dadinhos.removeChild(dadinhos.firstElementChild)
+          dadinhos.removeChild(dadinhos.firstElementChild);
           console.log(
             `Você tem ${tentativasF} tentativas, e você deu match em ${rodadaCounterF} dado(s)`
           );
@@ -233,9 +235,9 @@ class Fase {
           );
         } else {
           tentativasF--;
-        //   tries.innerText = tentativasF;
+          //   tries.innerText = tentativasF;
           alert("Errou");
-          dadinhos.removeChild(dadinhos.firstElementChild)
+          dadinhos.removeChild(dadinhos.firstElementChild);
           console.log(
             `Você tem ${tentativasF} tentativas, e você deu match em ${rodadaCounterF} dado(s)`
           );

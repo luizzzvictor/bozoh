@@ -44,6 +44,23 @@ const logoInicio = document.getElementById("telaInicial");
 const passarDeFase = document.getElementById("monitor");
 const elementosTelaDeJogo = document.querySelectorAll(".hide");
 
+//Rules
+let acionarRegras = document.querySelector("#rules");
+let regrasImagem = document.querySelector(".hideRules");
+let gatilhoDeRegras = true;
+acionarRegras.addEventListener("click", () => {
+  if (gatilhoDeRegras) {
+    gatilhoDeRegras = false
+    regrasImagem.classList.remove("hideRules");
+    logoInicio.classList.add("hide");
+  } else {
+    gatilhoDeRegras = true
+    regrasImagem.classList.add("hideRules");
+    logoInicio.classList.remove("hide");
+  }
+});
+//Rules
+
 const gerarFase1 = new Fase("easy");
 const gerarFase2 = new Fase("easy");
 const gerarFase3 = new Fase("medium");
@@ -57,6 +74,7 @@ logoInicio.addEventListener("click", () => {
   elementosTelaDeJogo.forEach((element) => {
     element.classList.remove("hide");
   });
+  acionarRegras.classList.add('hide')
 });
 
 passarDeFase.addEventListener("click", function fase2() {
