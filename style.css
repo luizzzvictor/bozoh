@@ -27,10 +27,28 @@
     font-size: 20px;    
     /* text-shadow: -5px 5px 0px #00e6e6, -10px 10px 0px #f0ce11,
     -15px 15px 0px #00bdbd; */
-    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #bac012, 0 0 30px #bac012, 0 0 40px #bac012, 0 0 55px #bac012, 0 0 75px #bac012, 2px 2px 2px rgba(206,192,60,0), 2px 2px 2px rgba(206,192,60,0), 2px 2px 2px rgba(206,192,60,0);
+    /* text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #bac012, 0 0 30px #bac012, 0 0 40px #bac012, 0 0 55px #bac012, 0 0 75px #bac012, 2px 2px 2px rgba(206,192,60,0), 2px 2px 2px rgba(206,192,60,0), 2px 2px 2px rgba(206,192,60,0); */
+    text-shadow: 1px 0px 10px #00e6e6, 5px 10px 15px #f0ce11,
+    0px 0px 20px #00bdbd, 10px -10px 15px #f0ce11  ;
     cursor: pointer;
   }
 
+  h1 {
+    margin: 20px 0;
+    font-size: 12rem;
+    font-family: "Nabla";
+    text-shadow: -5px 5px 0px #00e6e6, -10px 10px 0px #f0ce11,
+      -15px 15px 0px #00bdbd;
+    color: #ffffff;
+    word-spacing: 50px;
+    font-style: italic
+  }
+
+  h1:hover {
+    font-size: 16rem;
+    transition-duration: 5s;
+    cursor: pointer;
+}
 
   h6 {
     padding-top: 1%;
@@ -66,19 +84,21 @@
     padding: 5px 5px
   }
 
-
+.hide {
+  display: none;
+}
 
   div {
     padding-left: 3em;
     padding-right: 3em;
+    width: 9em;
   }
 
 
-  p {
-    
-    font-size: 4em;
-    font-family: 'Nabla';
-    /* color: aqua; */
+  p {    
+    font-size: 4em;   
+    font-variant-numeric: lining-nums;
+    font-family: 'Nabla';       
   }
 
   p:hover {
@@ -90,4 +110,16 @@
   .trunfo {
     text-shadow: -5px 5px 0px #00e6e6, -10px 10px 0px #f0ce11,
     -15px 15px 0px #00bdbd;
+  }
+
+  #divDosDadinhos {
+    display: flex;
+    flex-direction: row; /* or column*/
+    justify-content: space-evenly; /* eixo X */
+    align-items:baseline; /* eixo Y */
+    /* height: 100vh; */
+    background-color: azure;
+    padding: 1px 1px;
+    width: 13em;
+
   }

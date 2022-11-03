@@ -1,20 +1,8 @@
 class Dado {
   constructor() {
-    this.counter = 0;
-    // this.dadoPosicionado = 0
+    this.counter = 0;    
   }
 
-  rolarDado() {
-    // this.counter = Math.floor(Math.random() * 5)
-    // this.dadoPosicionado.innerHTML = this.counter
-    // setInterval(this.rolarDado,1000)
-  }
-
-  pararDado() {
-    console.log("buba!");
-  }
-
-  rolarDadoNovamente() {}
 }
 
 class Fase {
@@ -32,9 +20,10 @@ class Fase {
     let monitor = document.getElementById("monitor");
     monitor.className = 'dontClick'
     let pontuação = document.getElementById("pontos");
-    let tries = document.getElementById("tries");
+    // let tries = document.getElementById("tries");
     let nivelDaFase = this.nível
-    tries.innerText = 5;
+    // tries.innerText = 5;
+    const dadinhos = document.getElementById('divDosDadinhos')
 
     //Monitor
 
@@ -72,7 +61,7 @@ class Fase {
 
         if (nivelDaFase === 'hardcore') {
             monitor.innerText = "YOU WIN";
-            alert(`Bozó! Congrats! Sua pontuação equivale a ${pontuação.innerText}`);
+            alert(`Bozó! Congrats! Sua pontuação equivale a ${pontuação.innerText} pontos!`);
             window.location.reload()
         } else {
             monitor.className = 'clickMe'
@@ -81,7 +70,7 @@ class Fase {
 
       }
       if (tentativasF === 0) {
-        alert(`Game over! Sua pontuação equivale a ${pontuação.innerText}`);
+        alert(`Game over! Sua pontuação equivale a ${pontuação.innerText} pontos!`);
         window.location.reload()
       }
     }
@@ -200,8 +189,9 @@ class Fase {
           );
         } else {
           tentativasF--;
-          tries.innerText = tentativasF;
+        //   tries.innerText = tentativasF;
           alert("Errou");
+          dadinhos.removeChild(dadinhos.firstElementChild)
           console.log(
             `Você tem ${tentativasF} tentativas, e você deu match em ${rodadaCounterF} dado(s)`
           );
@@ -221,8 +211,9 @@ class Fase {
           );
         } else {
           tentativasF--;
-          tries.innerText = tentativasF;
+        //   tries.innerText = tentativasF;
           alert("Errou");
+          dadinhos.removeChild(dadinhos.firstElementChild)
           console.log(
             `Você tem ${tentativasF} tentativas, e você deu match em ${rodadaCounterF} dado(s)`
           );
@@ -242,8 +233,9 @@ class Fase {
           );
         } else {
           tentativasF--;
-          tries.innerText = tentativasF;
+        //   tries.innerText = tentativasF;
           alert("Errou");
+          dadinhos.removeChild(dadinhos.firstElementChild)
           console.log(
             `Você tem ${tentativasF} tentativas, e você deu match em ${rodadaCounterF} dado(s)`
           );
