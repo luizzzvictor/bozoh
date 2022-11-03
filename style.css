@@ -55,7 +55,7 @@ h5 {
   user-select: none; /* Standard syntax */
 }
 
-h5:hover {  
+h5:hover {
   cursor: pointer;
 }
 
@@ -171,7 +171,7 @@ p:hover {
 
 #rules {
   width: 100%;
-  justify-content: flex-end;  
+  justify-content: flex-end;
   position: sticky;
 }
 
@@ -180,13 +180,12 @@ p:hover {
 }
 
 img {
-  height: 100vh;
+  height: 83vh;
   /* background-color: azure; */
   padding-top: 50px;
   padding-bottom: 50px;
   margin-top: 30px;
 }
-
 
 @media (width < 768px) {
   p {
