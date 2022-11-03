@@ -20,6 +20,9 @@ body > span {
   font-family: "Share Tech Mono";
   color: darkgray;
   font-size: 25px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .clickMe {
@@ -31,6 +34,9 @@ body > span {
   text-shadow: 1px 0px 10px #00e6e6, 5px 10px 15px #f0ce11, 0px 0px 20px #00bdbd,
     10px -10px 15px #f0ce11;
   cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 h1 {
@@ -42,6 +48,9 @@ h1 {
   color: #ffffff;
   word-spacing: 50px;
   font-style: italic;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 h1:hover {
@@ -99,8 +108,8 @@ p {
   font-variant-numeric: lining-nums;
   font-family: "Nabla";
   -webkit-user-select: none;
-  -ms-user-select: none; 
-  user-select: none; 
+  -ms-user-select: none;
+  user-select: none;
 }
 
 p:hover {
@@ -114,10 +123,10 @@ p:hover {
 }
 
 #timer {
-  margin:auto;
+  margin: auto;
   display: flex;
   justify-content: center;
-  font
+
   /* padding-right: 12px; */
 }
 
