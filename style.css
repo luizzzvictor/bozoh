@@ -19,7 +19,7 @@ body > span {
   padding-top: 5%;
   font-family: "Share Tech Mono";
   color: darkgray;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .clickMe {
@@ -95,7 +95,7 @@ div {
 }
 
 p {
-  font-size: 4em;
+  font-size: 5em;
   font-variant-numeric: lining-nums;
   font-family: "Nabla";
 }
@@ -127,4 +127,40 @@ p:hover {
   opacity: 0.8;
   background-image: radial-gradient(rgb(138, 253, 253) 0.9px, azure 0.9px);
   background-size: 22px 22px;
+}
+
+@media (max-width:768px) {
+
+  p {
+    font-size: 4em;
+    font-variant-numeric: lining-nums;
+    font-family: "Nabla";
+  }
+
+  div {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    width: 5em;
+    margin-left: ;
+  }
+
+  section {
+    display: flex;
+    flex-direction: row; /* or column*/
+    justify-content: center; /* eixo X */
+    align-items:center; /* eixo Y */
+    /* height: 100vh; */
+    /* background-color: azure; */
+    padding: 1px 1px;
+    width: fit-content;    
+  }
+  
+  h1 {
+    font-size: 6em;
+    
+  }
+
+  h1:hover {
+    font-size: 8em;   
+  }
 }
