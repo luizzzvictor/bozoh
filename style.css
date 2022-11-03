@@ -130,7 +130,6 @@ p:hover {
 }
 
 @media (width < 768px) {
-
   p {
     font-size: 4em;
     font-variant-numeric: lining-nums;
@@ -144,27 +143,26 @@ p:hover {
     margin-left: ;
   }
 
-  body {
-    height: fit-content;
+  article {
+    padding-bottom: 20px;
   }
 
   section {
     display: flex;
     flex-direction: row; /* or column*/
     justify-content: center; /* eixo X */
-    align-items:center; /* eixo Y */
+    align-items: center; /* eixo Y */
     /* height: 100vh; */
     /* background-color: azure; */
     padding: 1px 1px;
-    width: fit-content;    
+    width: fit-content;
   }
-  
+
   h1 {
     font-size: 6em;
-    
   }
 
   h1:hover {
-    font-size: 8em;   
+    font-size: 8em;
   }
 }
