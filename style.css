@@ -123,10 +123,8 @@ p:hover {
 }
 
 .bg {
-  background-color: #e5e5f7;
+  background-color: #e7e7f5;
   opacity: 0.8;
-  background-image: radial-gradient(#5caac0 0.5px, transparent 0.5px),
-    radial-gradient(#5caac0 0.5px, #e5e5f7 0.5px);
-  background-size: 20px 20px;
-  background-position: 0 0, 10px 10px;
+  background-image: radial-gradient(rgb(138, 253, 253) 0.9px, azure 0.9px);
+  background-size: 22px 22px;
 }
