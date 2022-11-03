@@ -129,7 +129,7 @@ p:hover {
   background-size: 22px 22px;
 }
 
-@media (max-width:768px) {
+@media (width < 768px) {
 
   p {
     font-size: 4em;
@@ -142,6 +142,10 @@ p:hover {
     padding-right: 1.5em;
     width: 5em;
     margin-left: ;
+  }
+
+  body {
+    height: fit-content;
   }
 
   section {
