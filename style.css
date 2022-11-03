@@ -140,7 +140,7 @@ p:hover {
     padding-left: 1.5em;
     padding-right: 1.5em;
     width: 5em;
-    margin-left: ;
+    /* margin-left: ; */
   }
 
   article {
@@ -160,6 +160,10 @@ p:hover {
 
   h1 {
     font-size: 6em;
+  }
+
+  body {
+    height: 85vh;
   }
 
   h1:hover {
