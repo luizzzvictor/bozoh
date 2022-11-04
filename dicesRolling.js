@@ -93,7 +93,5 @@ class DadinhosPorFase {
     dadin5.gerarDadoRolling();
   }
 
-  sumir5Dadin() {
-    
-  }
+  sumir5Dadin() {}
 }

@@ -50,11 +50,11 @@ let regrasImagem = document.querySelector(".hideRules");
 let gatilhoDeRegras = true;
 acionarRegras.addEventListener("click", () => {
   if (gatilhoDeRegras) {
-    gatilhoDeRegras = false
+    gatilhoDeRegras = false;
     regrasImagem.classList.remove("hideRules");
     logoInicio.classList.add("hide");
   } else {
-    gatilhoDeRegras = true
+    gatilhoDeRegras = true;
     regrasImagem.classList.add("hideRules");
     logoInicio.classList.remove("hide");
   }
@@ -74,7 +74,7 @@ logoInicio.addEventListener("click", () => {
   elementosTelaDeJogo.forEach((element) => {
     element.classList.remove("hide");
   });
-  acionarRegras.classList.add('hide')
+  acionarRegras.classList.add("hide");
 });
 
 passarDeFase.addEventListener("click", function fase2() {
