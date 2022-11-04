@@ -11,7 +11,7 @@ body {
   flex-direction: column; /* or column*/
   justify-content: center; /* eixo X */
   align-items: center; /* eixo Y */
-  height: 90vh;
+  height: 95vh;
   background-color: azure;
 }
 
