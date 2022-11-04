@@ -130,12 +130,15 @@ class Fase {
       repeatSombra1 = setInterval(iniciarContagemSombra1, 850);
     }
     if (this.nível === "medium") {
+      monitor.innerText = "Set Trunfo";
       repeatSombra1 = setInterval(iniciarContagemSombra1, 650);
     }
     if (this.nível === "hard") {
+      monitor.innerText = "Set Trunfo";
       repeatSombra1 = setInterval(iniciarContagemSombra1, 500);
     }
     if (this.nível === "hardcore") {
+      monitor.innerText = "Set Trunfo";
       repeatSombra1 = setInterval(iniciarContagemSombra1, 300);
     }
 
